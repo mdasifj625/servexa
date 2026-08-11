@@ -1,11 +1,13 @@
 import { Outlet, NavLink } from "react-router-dom"
 import { ModeToggle } from "@/components/mode-toggle"
-import { Home, Users, Car, FileText, Menu } from "lucide-react"
+import { Home, Users, Car, FileText, Menu, LogOut } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { useState } from "react"
+import { useAuth } from "@/contexts/AuthContext"
 
 export default function DashboardLayout() {
   const [isSidebarOpen, setSidebarOpen] = useState(false)
+  const { logout, user } = useAuth()
 
   const toggleSidebar = () => setSidebarOpen(!isSidebarOpen)
 
@@ -56,8 +58,13 @@ export default function DashboardLayout() {
           </div>
           <div className="flex items-center ml-auto space-x-4">
             <ModeToggle />
-            <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-primary-foreground font-bold">
-              A
+            <div className="flex items-center space-x-2">
+              <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-primary-foreground font-bold uppercase">
+                {user?.email?.charAt(0) || 'U'}
+              </div>
+              <Button variant="ghost" size="icon" onClick={logout} title="Logout">
+                <LogOut className="w-5 h-5 text-muted-foreground hover:text-destructive" />
+              </Button>
             </div>
           </div>
         </header>
