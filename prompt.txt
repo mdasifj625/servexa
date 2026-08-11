@@ -1,0 +1,533 @@
+Here is your **fully updated Antigravity CLI prompt**, now correctly aligned with:
+
+* **Project Title:** Vehicle Service Center Management System
+* **Application Name:** Servexa
+* **Tech Stack:** React, TypeScript, NestJS, PostgreSQL, Prisma
+
+I have also refined it so it is **more production-realistic, consistent, and clean for execution**.
+
+---
+
+# ✅ FINAL UPDATED PROMPT (FOR ANTIGRAVITY CLI)
+
+# Build a Complete BCA Final-Year Project: SERVEXA
+
+## 1. Project Overview
+
+Build a complete, production-quality but college-project-appropriate full-stack web application called:
+
+# **SERVEXA – Vehicle Service Center Management System**
+
+This is a BCA final-year academic project designed to demonstrate practical knowledge of:
+
+* Full-stack web development
+* Scalable backend architecture
+* Database design and management
+* Authentication and authorization
+* REST API development
+* Business logic implementation
+* Role-based access control
+* Dashboard and reporting systems
+* PDF invoice generation
+* Form validation
+* Search, filtering, pagination
+* Software testing
+* Responsive UI design
+* Deployment fundamentals
+
+The system should feel like a **real-world garage management SaaS product**, but remain simple enough for a BCA student to explain during viva.
+
+Avoid microservices, Kafka, Redis, or unnecessary enterprise complexity.
+
+---
+
+# 2. Recommended Technology Stack
+
+## Frontend
+
+* React
+* TypeScript
+* Vite
+* Tailwind CSS
+* React Router
+* TanStack Query
+* React Hook Form
+* Zod
+* Recharts
+* Lucide React
+
+---
+
+## Backend (NestJS – REQUIRED)
+
+* NestJS (Node.js framework)
+* TypeScript
+* Prisma ORM
+* PostgreSQL
+* JWT Authentication (Passport.js)
+* Role-based Guards
+* Class Validator + Class Transformer
+* REST API architecture
+* Modular architecture (feature-based modules)
+
+---
+
+## Why NestJS
+
+* Industry-standard backend framework
+* Clean modular structure
+* Dependency injection system
+* Easy to explain in viva (Controller → Service → Module)
+* Highly scalable architecture
+
+---
+
+## Authentication
+
+* JWT-based authentication
+* Passport.js JWT strategy
+* bcrypt password hashing
+* Role-based access control (Guards)
+
+---
+
+## PDF Generation
+
+* Puppeteer OR PDFKit (server-side invoice generation)
+
+---
+
+# 3. Application Name Usage
+
+Use:
+
+* **Project Title:** Vehicle Service Center Management System
+* **Application Name:** SERVEXA
+
+UI branding should show:
+
+> SERVEXA
+> Smart Vehicle Service Management System
+
+---
+
+# 4. User Roles
+
+* Admin
+* Service Advisor
+* Mechanic
+* Customer (optional module)
+
+Each role must have strict access control.
+
+---
+
+# 5. Backend Architecture (NestJS REQUIRED)
+
+Use modular architecture:
+
+```text
+src/
+ ├── modules/
+ │    ├── auth/
+ │    ├── users/
+ │    ├── customers/
+ │    ├── vehicles/
+ │    ├── appointments/
+ │    ├── work-orders/
+ │    ├── inventory/
+ │    ├── billing/
+ │    ├── reports/
+ │
+ ├── common/
+ │    ├── guards/
+ │    ├── decorators/
+ │    ├── filters/
+ │    ├── interceptors/
+ │
+ ├── prisma/
+ ├── config/
+ ├── main.ts
+```
+
+Each module must include:
+
+* controller.ts
+* service.ts
+* dto/
+* module.ts
+
+---
+
+# 6. Core Modules
+
+## Authentication Module
+
+* Login
+* Logout
+* JWT validation
+* Role-based access
+* Current user endpoint
+
+---
+
+## Customer Module
+
+* CRUD operations
+* Search + pagination
+* Customer profile view
+
+---
+
+## Vehicle Module
+
+* Link vehicles to customers
+* Service history tracking
+* Vehicle profile page
+
+---
+
+## Service Module
+
+* Service catalog management
+* Pricing and duration
+
+---
+
+## Appointment Module
+
+* Schedule service appointments
+* Status tracking
+* Conflict prevention
+
+---
+
+## Work Order Module (CORE)
+
+* Job card creation
+* Mechanic assignment
+* Service + parts mapping
+* Status workflow
+* Cost calculation
+* Prisma transactions
+
+---
+
+## Mechanic Module
+
+* Assign jobs
+* Update progress
+* Work history
+
+---
+
+## Inventory Module
+
+* Spare parts management
+* Stock tracking
+* Low stock alerts
+* Prevent negative stock
+
+---
+
+## Supplier Module
+
+* Supplier CRUD
+* Purchase tracking
+
+---
+
+## Purchase Module
+
+* Stock increase logic
+* Transaction-safe updates
+
+---
+
+## Billing Module
+
+* Invoice generation
+* Payment tracking
+* PDF invoice download
+
+---
+
+## Reports Module
+
+* Revenue reports
+* Service analytics
+* Inventory reports
+* Mechanic performance
+
+---
+
+# 7. API Design
+
+Base URL:
+
+```
+/api/v1/
+```
+
+Example:
+
+* POST /auth/login
+* GET /customers
+* POST /vehicles
+* POST /appointments
+* POST /work-orders
+* GET /invoices//pdf
+
+---
+
+# 8. Database (Prisma + PostgreSQL)
+
+Must include:
+
+* Users
+* Roles
+* Customers
+* Vehicles
+* Services
+* Appointments
+* WorkOrders
+* WorkOrderItems
+* SpareParts
+* Inventory
+* Suppliers
+* Purchases
+* Invoices
+* Payments
+
+Ensure:
+
+* Proper relations
+* Foreign keys
+* Indexing
+* Normalization
+
+---
+
+# 9. Dashboard
+
+Show:
+
+* Total customers
+* Total vehicles
+* Today’s appointments
+* Active work orders
+* Revenue summary
+* Low stock alerts
+
+Include charts:
+
+* Monthly revenue
+* Service distribution
+* Work order status
+
+---
+
+# 10. UI Requirements
+
+* Modern SaaS dashboard UI
+* Sidebar navigation
+* Responsive design
+* Tables with pagination
+* Modal forms
+* Toast notifications
+* Loading states
+* Error states
+
+---
+
+# 11. Security
+
+* JWT authentication
+* Role-based guards
+* Input validation
+* Password hashing
+* Protected routes
+* API validation pipes
+
+---
+
+# 12. Validation & Error Handling
+
+* DTO validation (class-validator)
+* Global exception filter
+* Proper HTTP status codes
+* User-friendly error messages
+
+---
+
+# 13. Inventory Logic (IMPORTANT)
+
+* Stock must auto-decrease on work order usage
+* Stock must auto-increase on purchase
+* Prevent negative stock
+* Use Prisma transactions
+
+---
+
+# 14. PDF Invoice
+
+Invoice must include:
+
+* Company details (SERVEXA)
+* Customer details
+* Vehicle details
+* Services
+* Parts used
+* Labor cost
+* Total amount
+* Payment status
+
+Must be downloadable as PDF.
+
+---
+
+# 15. Testing
+
+Use Jest:
+
+* Unit tests (services)
+* Controller tests
+* E2E tests
+
+Test:
+
+* Auth
+* Customer CRUD
+* Vehicle CRUD
+* Work order flow
+* Inventory updates
+* Invoice generation
+
+---
+
+# 16. Seed Data
+
+Include:
+
+* Admin user
+* Sample customers
+* Vehicles
+* Services
+* Spare parts
+* Work orders
+* Invoices
+
+---
+
+# 17. Documentation Requirements
+
+Create `/docs` folder:
+
+* Architecture.md
+* Database.md
+* API.md
+* Modules.md
+* Testing.md
+
+Include NestJS explanation:
+
+* Controller → Service → Module flow
+* Dependency Injection
+* Guards system
+
+---
+
+# 18. Development Phases
+
+1. Setup NestJS + Prisma
+2. Authentication system
+3. Customer + Vehicle modules
+4. Appointment system
+5. Work orders (core logic)
+6. Inventory + suppliers
+7. Billing + PDF invoices
+8. Reports
+9. Frontend integration
+10. Testing + polishing
+
+---
+
+# 19. Final System Architecture
+
+```
+React Frontend
+        ↓
+REST API
+        ↓
+NestJS Backend
+        ↓
+Service Layer
+        ↓
+Prisma ORM
+        ↓
+PostgreSQL
+```
+
+---
+
+# 20. Academic Constraints
+
+* Keep system understandable for BCA viva
+* No microservices
+* No Kafka / Redis / distributed systems
+* No unnecessary AI features
+* Focus on clarity and fundamentals
+
+---
+
+# 21. Final Acceptance Criteria
+
+System is complete only if:
+
+* All modules work
+* Authentication works
+* Role access works
+* CRUD works
+* Inventory updates correctly
+* Work order flow is complete
+* Invoice PDF works
+* Reports generate correctly
+* UI is responsive
+* No critical bugs exist
+
+---
+
+# 22. Final Deliverables
+
+* Full NestJS backend
+* React frontend
+* Prisma schema
+* Seed data
+* API documentation
+* Test cases
+* README
+* Deployment guide
+* Screenshots
+
+---
+
+# END OF SPECIFICATION
+
+This project represents:
+
+> **SERVEXA – A Smart Vehicle Service Center Management System**
+
+A complete, structured, and viva-ready BCA final-year project.
+
+---
+
+## If you want next step
+
+I can also generate for you:
+
+✅ NestJS backend folder scaffold (ready to paste)
+✅ Prisma schema for SERVEXA
+✅ Database ER diagram
+✅ Or full Antigravity step-by-step execution plan
+
+Just tell me 👍
