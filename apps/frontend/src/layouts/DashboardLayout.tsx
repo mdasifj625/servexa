@@ -15,6 +15,7 @@ export default function DashboardLayout() {
     { name: "Home", path: "/dashboard", icon: <Home className="w-5 h-5" /> },
     { name: "Customers", path: "/customers", icon: <Users className="w-5 h-5" /> },
     { name: "Vehicles", path: "/vehicles", icon: <Car className="w-5 h-5" /> },
+    { name: "Inventory", path: "/inventory", icon: <FileText className="w-5 h-5" /> },
     { name: "Invoices", path: "/invoices", icon: <FileText className="w-5 h-5" /> },
   ]
 
