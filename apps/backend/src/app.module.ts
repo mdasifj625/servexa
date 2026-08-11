@@ -6,9 +6,10 @@ import { UsersModule } from './users/users.module';
 import { RolesModule } from './roles/roles.module';
 import { PrismaModule } from './prisma/prisma.module';
 import { PartsModule } from './parts/parts.module';
+import { PdfModule } from './pdf/pdf.module';
 
 @Module({
-  imports: [AuthModule, UsersModule, RolesModule, PrismaModule, PartsModule],
+  imports: [AuthModule, UsersModule, RolesModule, PrismaModule, PartsModule, PdfModule],
   controllers: [AppController],
   providers: [AppService],
 })
