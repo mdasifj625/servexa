@@ -5,6 +5,7 @@ import LoginPage from './pages/LoginPage';
 import ProtectedRoute from './components/ProtectedRoute';
 import InventoryPage from './pages/InventoryPage';
 import InvoicesPage from './pages/InvoicesPage';
+import UsersPage from './pages/UsersPage';
 
 function App() {
   return (
@@ -20,6 +21,11 @@ function App() {
             <Route path="/vehicles" element={<div className="p-4 text-xl">Vehicles Page (Coming Soon)</div>} />
             <Route path="/inventory" element={<InventoryPage />} />
             <Route path="/invoices" element={<InvoicesPage />} />
+            
+            {/* Admin only route */}
+            <Route element={<ProtectedRoute allowedRoles={['Admin']} />}>
+              <Route path="/users" element={<UsersPage />} />
+            </Route>
           </Route>
         </Route>
       </Routes>

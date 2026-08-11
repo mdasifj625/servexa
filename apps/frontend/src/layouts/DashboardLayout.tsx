@@ -12,12 +12,13 @@ export default function DashboardLayout() {
   const toggleSidebar = () => setSidebarOpen(!isSidebarOpen)
 
   const navItems = [
-    { name: "Home", path: "/dashboard", icon: <Home className="w-5 h-5" /> },
-    { name: "Customers", path: "/customers", icon: <Users className="w-5 h-5" /> },
-    { name: "Vehicles", path: "/vehicles", icon: <Car className="w-5 h-5" /> },
-    { name: "Inventory", path: "/inventory", icon: <FileText className="w-5 h-5" /> },
-    { name: "Invoices", path: "/invoices", icon: <FileText className="w-5 h-5" /> },
-  ]
+    { name: "Home", path: "/dashboard", icon: <Home className="w-5 h-5" />, roles: [] },
+    { name: "Customers", path: "/customers", icon: <Users className="w-5 h-5" />, roles: ['Admin', 'Service Advisor'] },
+    { name: "Vehicles", path: "/vehicles", icon: <Car className="w-5 h-5" />, roles: [] },
+    { name: "Inventory", path: "/inventory", icon: <FileText className="w-5 h-5" />, roles: ['Admin', 'Mechanic', 'Service Advisor'] },
+    { name: "Invoices", path: "/invoices", icon: <FileText className="w-5 h-5" />, roles: ['Admin', 'Service Advisor'] },
+    { name: "Users", path: "/users", icon: <Users className="w-5 h-5" />, roles: ['Admin'] },
+  ].filter(item => item.roles.length === 0 || (user && user.roles.some(r => item.roles.includes(r))))
 
   return (
     <div className="flex h-screen overflow-hidden bg-background">

@@ -2,11 +2,15 @@ import { useEffect, useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { getParts, type Part } from '@/api/parts';
+import { useAuth } from '@/contexts/AuthContext';
 
 export default function InventoryPage() {
   const [parts, setParts] = useState<Part[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const { user } = useAuth();
+  
+  const canManageParts = user?.roles.some(r => ['Admin', 'Service Advisor'].includes(r));
 
   useEffect(() => {
     fetchParts();
@@ -29,7 +33,7 @@ export default function InventoryPage() {
     <div className="space-y-4">
       <div className="flex items-center justify-between">
         <h1 className="text-3xl font-bold tracking-tight">Inventory</h1>
-        <Button>Add New Part</Button>
+        {canManageParts && <Button>Add New Part</Button>}
       </div>
 
       <Card>
