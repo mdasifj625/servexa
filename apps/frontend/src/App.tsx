@@ -4,6 +4,7 @@ import Dashboard from './pages/Dashboard';
 import LoginPage from './pages/LoginPage';
 import ProtectedRoute from './components/ProtectedRoute';
 import InventoryPage from './pages/InventoryPage';
+import InvoicesPage from './pages/InvoicesPage';
 
 function App() {
   return (
@@ -18,7 +19,7 @@ function App() {
             <Route path="/customers" element={<div className="p-4 text-xl">Customers Page (Coming Soon)</div>} />
             <Route path="/vehicles" element={<div className="p-4 text-xl">Vehicles Page (Coming Soon)</div>} />
             <Route path="/inventory" element={<InventoryPage />} />
-            <Route path="/invoices" element={<div className="p-4 text-xl">Invoices Page (Coming Soon)</div>} />
+            <Route path="/invoices" element={<InvoicesPage />} />
           </Route>
         </Route>
       </Routes>
