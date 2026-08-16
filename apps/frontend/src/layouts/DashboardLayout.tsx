@@ -15,6 +15,7 @@ export default function DashboardLayout() {
     { name: "Home", path: "/dashboard", icon: <Home className="w-5 h-5" />, roles: [] },
     { name: "Customers", path: "/customers", icon: <Users className="w-5 h-5" />, roles: ['Admin', 'Service Advisor'] },
     { name: "Vehicles", path: "/vehicles", icon: <Car className="w-5 h-5" />, roles: [] },
+    { name: "Work Orders", path: "/work-orders", icon: <FileText className="w-5 h-5" />, roles: ['Admin', 'Mechanic', 'Service Advisor'] },
     { name: "Inventory", path: "/inventory", icon: <FileText className="w-5 h-5" />, roles: ['Admin', 'Mechanic', 'Service Advisor'] },
     { name: "Invoices", path: "/invoices", icon: <FileText className="w-5 h-5" />, roles: ['Admin', 'Service Advisor'] },
     { name: "Users", path: "/users", icon: <Users className="w-5 h-5" />, roles: ['Admin'] },

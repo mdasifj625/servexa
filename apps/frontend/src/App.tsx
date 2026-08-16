@@ -6,6 +6,9 @@ import ProtectedRoute from './components/ProtectedRoute';
 import InventoryPage from './pages/InventoryPage';
 import InvoicesPage from './pages/InvoicesPage';
 import UsersPage from './pages/UsersPage';
+import CustomersPage from './pages/CustomersPage';
+import VehiclesPage from './pages/VehiclesPage';
+import WorkOrdersPage from './pages/WorkOrdersPage';
 
 function App() {
   return (
@@ -17,8 +20,9 @@ function App() {
         <Route element={<ProtectedRoute />}>
           <Route element={<DashboardLayout />}>
             <Route path="/dashboard" element={<Dashboard />} />
-            <Route path="/customers" element={<div className="p-4 text-xl">Customers Page (Coming Soon)</div>} />
-            <Route path="/vehicles" element={<div className="p-4 text-xl">Vehicles Page (Coming Soon)</div>} />
+            <Route path="/customers" element={<CustomersPage />} />
+            <Route path="/vehicles" element={<VehiclesPage />} />
+            <Route path="/work-orders" element={<WorkOrdersPage />} />
             <Route path="/inventory" element={<InventoryPage />} />
             <Route path="/invoices" element={<InvoicesPage />} />
             
