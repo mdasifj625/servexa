@@ -283,21 +283,21 @@ Process 1.0 (Auth) -> Process 2.0 (Customer Registration) -> Process 3.0 (Job Ca
 ## 6.6 Use Case Diagram
 
 ```mermaid
-usecaseDiagram
-    actor Admin
-    actor ServiceAdvisor
-    actor Mechanic
+graph LR
+    Admin([Admin])
+    ServiceAdvisor([Service Advisor])
+    Mechanic([Mechanic])
 
-    Admin --> (Manage Users)
-    Admin --> (View Revenue Reports)
-    Admin --> (Manage Suppliers)
+    Admin --> U1(Manage Users)
+    Admin --> U2(View Revenue Reports)
+    Admin --> U3(Manage Suppliers)
 
-    ServiceAdvisor --> (Register Customer & Vehicle)
-    ServiceAdvisor --> (Create Work Order)
-    ServiceAdvisor --> (Generate Invoice)
+    ServiceAdvisor --> U4(Register Customer & Vehicle)
+    ServiceAdvisor --> U5(Create Work Order)
+    ServiceAdvisor --> U6(Generate Invoice)
 
-    Mechanic --> (View Assigned Work Orders)
-    Mechanic --> (Update Work Order Status)
+    Mechanic --> U7(View Assigned Work Orders)
+    Mechanic --> U8(Update Work Order Status)
 ```
 
 ## 6.7 Activity Diagram
