@@ -1,0 +1,224 @@
+VEHICLE SERVICE CENTER MANAGEMENT SYSTEM
+
+1. Cover Page
+
+2. Certificate
+
+3. Declaration
+
+4. Acknowledgement
+
+5. Abstract
+
+6. Table of Contents
+
+7. List of Figures
+
+8. List of Tables
+
+
+CHAPTER 1 — INTRODUCTION
+
+1.1 Introduction
+1.2 Background
+1.3 Problem Statement
+1.4 Motivation
+1.5 Objectives
+1.6 Scope of the Project
+1.7 Target Users
+1.8 Project Limitations
+1.9 Organization of the Report
+
+
+CHAPTER 2 — EXISTING SYSTEM
+
+2.1 Existing System
+2.2 Problems with Existing System
+2.3 Limitations of Manual System
+2.4 Need for Proposed System
+
+
+CHAPTER 3 — PROPOSED SYSTEM
+
+3.1 Proposed Solution
+3.2 Features
+3.3 Advantages
+3.4 User Roles
+3.5 System Workflow
+3.6 Project Scope
+
+
+CHAPTER 4 — REQUIREMENT ANALYSIS
+
+4.1 Functional Requirements
+4.2 Non-Functional Requirements
+4.3 Hardware Requirements
+4.4 Software Requirements
+4.5 User Requirements
+4.6 System Requirements
+
+
+CHAPTER 5 — FEASIBILITY STUDY
+
+5.1 Technical Feasibility
+5.2 Economic Feasibility
+5.3 Operational Feasibility
+5.4 Schedule Feasibility
+5.5 Feasibility Conclusion
+
+
+CHAPTER 6 — SYSTEM ANALYSIS & DESIGN
+
+6.1 System Architecture
+6.2 System Flow Diagram
+6.3 Context Diagram
+6.4 Data Flow Diagram — Level 0
+6.5 Data Flow Diagram — Level 1
+6.6 Use Case Diagram
+6.7 Activity Diagram
+6.8 Sequence Diagram
+6.9 Class Diagram
+6.10 Entity Relationship Diagram
+6.11 Database Design
+
+
+CHAPTER 7 — DATABASE DESIGN
+
+7.1 Database Introduction
+7.2 Database Tables
+7.3 Table Structures
+7.4 Primary Keys
+7.5 Foreign Keys
+7.6 Relationships
+7.7 Normalization
+
+
+CHAPTER 8 — TECHNOLOGY USED
+
+8.1 React
+8.2 TypeScript
+8.3 Node.js
+8.4 Express.js
+8.5 PostgreSQL
+8.6 Prisma
+8.7 Tailwind CSS
+8.8 REST API
+8.9 JWT
+8.10 Development Tools
+
+
+CHAPTER 9 — SYSTEM IMPLEMENTATION
+
+9.1 Project Structure
+9.2 Authentication Module
+9.3 Dashboard Module
+9.4 Customer Module
+9.5 Vehicle Module
+9.6 Service Module
+9.7 Appointment Module
+9.8 Work Order Module
+9.9 Mechanic Module
+9.10 Inventory Module
+9.11 Supplier Module
+9.12 Billing Module
+9.13 Payment Module
+9.14 Reports Module
+9.15 PDF Invoice Module
+
+
+CHAPTER 10 — USER INTERFACE
+
+10.1 Login Screen
+10.2 Dashboard
+10.3 Customer Management
+10.4 Vehicle Management
+10.5 Appointment Management
+10.6 Work Order
+10.7 Mechanic Management
+10.8 Inventory
+10.9 Billing
+10.10 Reports
+
+
+CHAPTER 11 — TESTING
+
+11.1 Introduction
+11.2 Testing Strategy
+11.3 Unit Testing
+11.4 Integration Testing
+11.5 System Testing
+11.6 User Acceptance Testing
+11.7 Test Cases
+11.8 Test Results
+11.9 Bug Fixing
+
+
+CHAPTER 12 — RESULTS & DISCUSSION
+
+12.1 System Results
+12.2 Feature Evaluation
+12.3 Performance
+12.4 Usability
+12.5 Screenshots
+12.6 Discussion
+
+
+CHAPTER 13 — SECURITY
+
+13.1 Authentication
+13.2 Authorization
+13.3 Password Security
+13.4 Input Validation
+13.5 API Security
+13.6 Data Protection
+
+
+CHAPTER 14 — ADVANTAGES & LIMITATIONS
+
+14.1 Advantages
+14.2 Limitations
+
+
+CHAPTER 15 — FUTURE SCOPE
+
+15.1 Mobile Application
+15.2 Online Booking
+15.3 SMS Notifications
+15.4 WhatsApp Notifications
+15.5 Online Payments
+15.6 Customer Mobile Portal
+15.7 AI-Based Maintenance Suggestions
+15.8 Multi-Branch Support
+
+
+CHAPTER 16 — CONCLUSION
+
+16.1 Conclusion
+16.2 Learning Outcomes
+16.3 Project Outcome
+
+
+REFERENCES
+
+
+APPENDIX
+
+A. Database Schema
+B. API List
+C. Test Cases
+D. Sample Reports
+E. Screenshots
+F. Source Code Structure
+G. User Manual
+
+
+---Essential---
+System Architecture Diagram
+Use Case Diagram
+ER Diagram
+DFD Level 0
+DFD Level 1
+Activity Diagram
+Sequence Diagram
+Class Diagram
+Database Schema

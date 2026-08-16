@@ -19,47 +19,143 @@ model Role {
 }
 
 model User {
-  id        Int      @id @default(autoincrement())
-  email     String   @unique
+  id        Int         @id @default(autoincrement())
+  email     String      @unique
   password  String
   name      String
   roleId    Int
-  role      Role     @relation(fields: [roleId], references: [id])
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  role      Role        @relation(fields: [roleId], references: [id])
+  workOrders WorkOrder[]
+  createdAt DateTime    @default(now())
+  updatedAt DateTime    @updatedAt
 }
 
 model Part {
-  id          String   @id @default(uuid())
+  id          String          @id @default(uuid())
   name        String
   description String?
   price       Float
-  stock       Int      @default(0)
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
+  stock       Int             @default(0)
+  workOrderItems WorkOrderItem[]
+  purchases   Purchase[]
+  createdAt   DateTime        @default(now())
+  updatedAt   DateTime        @updatedAt
 }
 
 model Customer {
-  id        Int       @id @default(autoincrement())
-  firstName String
-  lastName  String
-  email     String?   @unique
-  phone     String    @unique
-  address   String?
-  vehicles  Vehicle[]
-  createdAt DateTime  @default(now())
-  updatedAt DateTime  @updatedAt
+  id          Int           @id @default(autoincrement())
+  firstName   String
+  lastName    String
+  email       String?       @unique
+  phone       String        @unique
+  address     String?
+  vehicles    Vehicle[]
+  appointments Appointment[]
+  workOrders  WorkOrder[]
+  createdAt   DateTime      @default(now())
+  updatedAt   DateTime      @updatedAt
 }
 
 model Vehicle {
-  id           Int      @id @default(autoincrement())
+  id           Int           @id @default(autoincrement())
   make         String
   model        String
   year         Int
-  licensePlate String   @unique
-  vin          String?  @unique
+  licensePlate String        @unique
+  vin          String?       @unique
   customerId   Int
-  customer     Customer @relation(fields: [customerId], references: [id])
-  createdAt    DateTime @default(now())
-  updatedAt    DateTime @updatedAt
+  customer     Customer      @relation(fields: [customerId], references: [id])
+  appointments Appointment[]
+  workOrders   WorkOrder[]
+  createdAt    DateTime      @default(now())
+  updatedAt    DateTime      @updatedAt
+}
+
+model Service {
+  id             Int             @id @default(autoincrement())
+  name           String
+  description    String?
+  price          Float
+  duration       Int             // Estimated duration in minutes
+  workOrderItems WorkOrderItem[]
+  createdAt      DateTime        @default(now())
+  updatedAt      DateTime        @updatedAt
+}
+
+model Appointment {
+  id              Int      @id @default(autoincrement())
+  appointmentDate DateTime
+  status          String   @default("SCHEDULED") // SCHEDULED, CANCELLED, COMPLETED
+  customerId      Int
+  customer        Customer @relation(fields: [customerId], references: [id])
+  vehicleId       Int
+  vehicle         Vehicle  @relation(fields: [vehicleId], references: [id])
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+}
+
+model WorkOrder {
+  id          Int             @id @default(autoincrement())
+  status      String          @default("OPEN") // OPEN, IN_PROGRESS, COMPLETED, CANCELLED
+  customerId  Int
+  customer    Customer        @relation(fields: [customerId], references: [id])
+  vehicleId   Int
+  vehicle     Vehicle         @relation(fields: [vehicleId], references: [id])
+  mechanicId  Int?
+  mechanic    User?           @relation(fields: [mechanicId], references: [id])
+  items       WorkOrderItem[]
+  invoice     Invoice?
+  createdAt   DateTime        @default(now())
+  updatedAt   DateTime        @updatedAt
+}
+
+model WorkOrderItem {
+  id          Int       @id @default(autoincrement())
+  workOrderId Int
+  workOrder   WorkOrder @relation(fields: [workOrderId], references: [id])
+  serviceId   Int?
+  service     Service?  @relation(fields: [serviceId], references: [id])
+  partId      String?
+  part        Part?     @relation(fields: [partId], references: [id])
+  quantity    Int       @default(1)
+  price       Float     // Snapshot of price at the time of order
+}
+
+model Supplier {
+  id          Int        @id @default(autoincrement())
+  name        String
+  contact     String?
+  purchases   Purchase[]
+  createdAt   DateTime   @default(now())
+  updatedAt   DateTime   @updatedAt
+}
+
+model Purchase {
+  id           Int      @id @default(autoincrement())
+  supplierId   Int
+  supplier     Supplier @relation(fields: [supplierId], references: [id])
+  partId       String
+  part         Part     @relation(fields: [partId], references: [id])
+  quantity     Int
+  cost         Float
+  purchaseDate DateTime @default(now())
+}
+
+model Invoice {
+  id          Int       @id @default(autoincrement())
+  workOrderId Int       @unique
+  workOrder   WorkOrder @relation(fields: [workOrderId], references: [id])
+  totalAmount Float
+  status      String    @default("UNPAID") // UNPAID, PAID
+  issuedAt    DateTime  @default(now())
+  payment     Payment?
+}
+
+model Payment {
+  id          Int      @id @default(autoincrement())
+  invoiceId   Int      @unique
+  invoice     Invoice  @relation(fields: [invoiceId], references: [id])
+  amount      Float
+  paymentDate DateTime @default(now())
+  method      String   // CASH, CARD, ONLINE
 }
