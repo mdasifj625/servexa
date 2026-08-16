@@ -16,8 +16,12 @@ export default function DashboardLayout() {
     { name: "Customers", path: "/customers", icon: <Users className="w-5 h-5" />, roles: ['Admin', 'Service Advisor'] },
     { name: "Vehicles", path: "/vehicles", icon: <Car className="w-5 h-5" />, roles: [] },
     { name: "Work Orders", path: "/work-orders", icon: <FileText className="w-5 h-5" />, roles: ['Admin', 'Mechanic', 'Service Advisor'] },
+    { name: "Appointments", path: "/appointments", icon: <FileText className="w-5 h-5" />, roles: [] },
+    { name: "Services", path: "/services", icon: <FileText className="w-5 h-5" />, roles: ['Admin', 'Service Advisor'] },
     { name: "Inventory", path: "/inventory", icon: <FileText className="w-5 h-5" />, roles: ['Admin', 'Mechanic', 'Service Advisor'] },
+    { name: "Suppliers", path: "/suppliers", icon: <Users className="w-5 h-5" />, roles: ['Admin'] },
     { name: "Invoices", path: "/invoices", icon: <FileText className="w-5 h-5" />, roles: ['Admin', 'Service Advisor'] },
+    { name: "Reports", path: "/reports", icon: <FileText className="w-5 h-5" />, roles: ['Admin'] },
     { name: "Users", path: "/users", icon: <Users className="w-5 h-5" />, roles: ['Admin'] },
   ].filter(item => item.roles.length === 0 || (user && user.roles.some(r => item.roles.includes(r))))
 

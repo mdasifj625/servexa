@@ -9,6 +9,10 @@ import UsersPage from './pages/UsersPage';
 import CustomersPage from './pages/CustomersPage';
 import VehiclesPage from './pages/VehiclesPage';
 import WorkOrdersPage from './pages/WorkOrdersPage';
+import AppointmentsPage from './pages/AppointmentsPage';
+import SuppliersPage from './pages/SuppliersPage';
+import ServicesPage from './pages/ServicesPage';
+import ReportsPage from './pages/ReportsPage';
 
 function App() {
   return (
@@ -23,6 +27,10 @@ function App() {
             <Route path="/customers" element={<CustomersPage />} />
             <Route path="/vehicles" element={<VehiclesPage />} />
             <Route path="/work-orders" element={<WorkOrdersPage />} />
+            <Route path="/appointments" element={<AppointmentsPage />} />
+            <Route path="/suppliers" element={<SuppliersPage />} />
+            <Route path="/services" element={<ServicesPage />} />
+            <Route path="/reports" element={<ReportsPage />} />
             <Route path="/inventory" element={<InventoryPage />} />
             <Route path="/invoices" element={<InvoicesPage />} />
             
