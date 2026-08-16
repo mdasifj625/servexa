@@ -222,3 +222,38 @@ Activity Diagram
 Sequence Diagram
 Class Diagram
 Database Schema
+
+
+ Here are the 3 best and easiest ways to convert your Final_Project_Report.md into a beautifully formatted PDF for your college submission:
+
+  ### Option 1: Use a VS Code Extension (Recommended & Easiest)
+
+  If you are using Visual Studio Code to write your project:
+
+  1. Open VS Code and go to the Extensions tab (or press Ctrl+Shift+X).
+  2. Search for an extension called "Markdown PDF" (by yzane) and click Install.
+  3. Open your Final_Project_Report.md file in VS Code.
+  4. Right-click anywhere inside the file and select "Markdown PDF: Export (pdf)".
+  5. It will automatically generate a PDF in the exact same folder!
+
+  ### Option 2: Use Google Chrome / Edge (Best for rendering Mermaid Diagrams)
+
+  Because we used mermaid diagrams for the architecture and ERD, some basic markdown converters might not render them. The easiest way to render everything
+  perfectly is via the browser:
+
+  1. Install a browser extension like Markdown Viewer for Chrome, or simply upload your .md file to a private GitHub repository (GitHub automatically renders
+  markdown and mermaid diagrams perfectly).
+  2. Once you can see the beautifully rendered document in your browser window, press Ctrl + P (or Cmd + P on Mac).
+  3. Change the destination to "Save as PDF".
+  4. Make sure to check the box for "Background graphics" so the formatting and diagrams look correct, then click Save.
+
+  ### Option 3: Use an Online Tool
+
+  If you don't want to install anything:
+
+  1. Copy the entire contents of your Final_Project_Report.md file.
+  2. Go to a free online markdown editor like Dillinger.io https://dillinger.io/ or StackEdit.io https://stackedit.io/.
+  3. Paste your text into the left panel.
+  4. Go to File -> Export -> Export as PDF.
+
+  (Note: Don't forget to manually type in your Roll Number, Guide's Name, and paste your College Logo into the document before generating the final PDF!)

@@ -7,7 +7,7 @@ export default function CustomersPage() {
 
   useEffect(() => {
     // Mock fetch for now, to be connected to the API layer via React Query
-    fetch('http://localhost:3000/api/v1/customers')
+    fetch('http://localhost:3000/customers')
       .then((res) => {
         if (!res.ok) throw new Error('Network response was not ok');
         return res.json();

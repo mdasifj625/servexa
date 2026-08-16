@@ -6,7 +6,7 @@ export default function VehiclesPage() {
   const [vehicles, setVehicles] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:3000/api/v1/vehicles')
+    fetch('http://localhost:3000/vehicles')
       .then((res) => {
         if (!res.ok) throw new Error('Network response was not ok');
         return res.json();

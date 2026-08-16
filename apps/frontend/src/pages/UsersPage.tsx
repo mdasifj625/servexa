@@ -1,13 +1,14 @@
 import { useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
+import { Badge } from '@/components/ui/badge';
 import { UserPlus } from 'lucide-react';
 
 export default function UsersPage() {
   const [dummyUsers] = useState([
-    { id: 'usr-1', name: 'Admin User', email: 'admin@servexa.com', roles: ['Admin'] },
-    { id: 'usr-2', name: 'Service Advisor', email: 'advisor@servexa.com', roles: ['Service Advisor'] },
-    { id: 'usr-3', name: 'Mechanic', email: 'mechanic@servexa.com', roles: ['Mechanic'] },
+    { id: 'usr-1', name: 'Admin User', email: 'admin@servexa.com', role: 'Admin' },
+    { id: 'usr-2', name: 'Service Advisor', email: 'advisor@servexa.com', role: 'Service Advisor' },
+    { id: 'usr-3', name: 'Mechanic', email: 'mechanic@servexa.com', role: 'Mechanic' },
   ]);
 
   return (
@@ -39,9 +40,9 @@ export default function UsersPage() {
                     <td className="px-6 py-4 font-medium">{u.name}</td>
                     <td className="px-6 py-4">{u.email}</td>
                     <td className="px-6 py-4">
-                      {u.roles.map(r => (
-                        <span key={r} className="bg-primary/10 text-primary px-2 py-1 rounded-md text-xs mr-2">{r}</span>
-                      ))}
+                      <Badge variant="secondary" className="mr-1">
+                        {u.role}
+                      </Badge>
                     </td>
                     <td className="px-6 py-4 text-center">
                       <Button variant="outline" size="sm">Edit</Button>

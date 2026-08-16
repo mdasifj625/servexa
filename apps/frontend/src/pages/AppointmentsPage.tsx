@@ -6,7 +6,7 @@ export default function AppointmentsPage() {
   const [appointments, setAppointments] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:3000/api/v1/appointments')
+    fetch('http://localhost:3000/appointments')
       .then((res) => {
         if (!res.ok) throw new Error('Network response was not ok');
         return res.json();

@@ -23,7 +23,7 @@ export default function DashboardLayout() {
     { name: "Invoices", path: "/invoices", icon: <FileText className="w-5 h-5" />, roles: ['Admin', 'Service Advisor'] },
     { name: "Reports", path: "/reports", icon: <FileText className="w-5 h-5" />, roles: ['Admin'] },
     { name: "Users", path: "/users", icon: <Users className="w-5 h-5" />, roles: ['Admin'] },
-  ].filter(item => item.roles.length === 0 || (user && user.roles.some(r => item.roles.includes(r))))
+  ].filter(item => item.roles.length === 0 || (user && user.role && item.roles.includes(user.role)))
 
   return (
     <div className="flex h-screen overflow-hidden bg-background">

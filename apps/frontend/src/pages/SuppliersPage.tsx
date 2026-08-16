@@ -6,7 +6,7 @@ export default function SuppliersPage() {
   const [suppliers, setSuppliers] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:3000/api/v1/suppliers')
+    fetch('http://localhost:3000/suppliers')
       .then((res) => {
         if (!res.ok) throw new Error('Network response was not ok');
         return res.json();

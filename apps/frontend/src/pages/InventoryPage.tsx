@@ -10,7 +10,7 @@ export default function InventoryPage() {
   const [error, setError] = useState<string | null>(null);
   const { user } = useAuth();
   
-  const canManageParts = user?.roles.some(r => ['Admin', 'Service Advisor'].includes(r));
+  const canManageParts = user?.role ? ['Admin', 'Service Advisor'].includes(user.role) : false;
 
   useEffect(() => {
     fetchParts();
