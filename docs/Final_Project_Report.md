@@ -1,7 +1,44 @@
 # VEHICLE SERVICE CENTER MANAGEMENT SYSTEM
 
 ## 1. Cover Page
-*(To be filled by student: Project Title: "Servexa - Vehicle Service Center Management System", Student Name, Roll No, Guide Name, College Logo)*
+
+<div align="center">
+
+# A PROJECT REPORT ON
+## SERVEXA - VEHICLE SERVICE CENTER MANAGEMENT SYSTEM
+
+<br>
+
+*Submitted in partial fulfillment of the requirements for the award of the degree of*
+
+### BACHELOR OF COMPUTER APPLICATIONS (BCA)
+
+<br>
+
+**Submitted By:**
+**[Your Full Name]**
+**(Roll No: [Your Roll Number])**
+
+<br>
+
+**Under the Guidance of:**
+**[Guide's Full Name]**
+*(Designation)*
+
+<br>
+
+*[Insert College Logo Here]*
+
+<br>
+
+### DEPARTMENT OF COMPUTER APPLICATIONS
+### [NAME OF YOUR COLLEGE/UNIVERSITY]
+### [CITY, STATE, ZIP]
+### Academic Year 2025 - 2026
+
+</div>
+
+<div style="page-break-after: always;"></div>
 
 ## 2. Certificate
 This is to certify that the project entitled "Servexa - Vehicle Service Center Management System" has been successfully completed by [Student Name], bearing Roll Number [Roll Number], during the academic year 2026. This work fulfills the requirements for the final year BCA project submission and demonstrates a practical implementation of modern full-stack web development principles.
